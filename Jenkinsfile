@@ -9,7 +9,6 @@ pipeline {
     stages {
 
         stage('Build') {
-<<<<<<< HEAD
                     steps {
                         sh 'docker build . -t trungnguyen.gtbt/config-service:latest'
                         sh 'docker build . -t config-service:latest'
@@ -31,17 +30,5 @@ pipeline {
                         sh '/home/jenkins/transfer.sh target'
                     }
                 }
-=======
-            steps {
-                sh 'docker build .'
-            }
-        }
-        stage('Run') { 
-            steps {
-                sh 'ls ./target'
-                sh '/home/jenkins/transfer.sh target'
-            }
-        }
->>>>>>> master
     }
 }
