@@ -18,7 +18,7 @@ pipeline {
 
                 stage('Publish') {
                      steps {
-                        sh 'docker login --username=trungnguyengtbt --password=herO10068'
+                        sh 'docker login --username=trungnguyengtbt --password-stdin < /home/jenkins/dockerpassword'
                         sh 'docker push trungnguyen.gtbt/config-service:latest'
                         sh 'docker tag config-service:latest trungnguyen.gtbt/config-service:latest'
                         sh 'docker push trungnguyen.gtbt/config-service'
