@@ -25,7 +25,7 @@ pipeline {
                 stage('Run') {
                     steps {
                         sh 'ls ./target'
-                        sh '/home/jenkins/transfer.sh 192.168.1.172 5021 trungnguyengtbt/config-service:latest'
+                        sh 'ssh -i /home/jenkins/ssh/privatekey 192.168.1.172 5021'
                     }
                 }
     }
