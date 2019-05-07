@@ -25,7 +25,7 @@ pipeline {
                 stage('Run') {
                     steps {
                         sh 'ls ./target'
-                        sh 'ssh -i /home/jenkins/ssh/jenkins 192.168.1.172 -p 5021'
+                        sh '/home/jenkins/runner.sh 192.168.1.172 5021 trungnguyengtbt/config-service:latest'
                     }
                 }
     }
