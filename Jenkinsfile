@@ -11,17 +11,14 @@ pipeline {
         stage('Build') {
                     steps {
                         sh 'mvn clean package'
-                        sh 'docker build . -t trungnguyen.gtbt/config-service:latest'
-                        sh 'docker build . -t config-service:latest'
+                        sh 'docker build . -t trungnguyengtbt/config-service:latest'
                     }
                 }
 
                 stage('Publish') {
                      steps {
                         sh 'docker login --username=trungnguyengtbt --password-stdin < /home/jenkins/dockerpassword'
-                        sh 'docker push trungnguyen.gtbt/config-service:latest'
-                        sh 'docker tag config-service:latest trungnguyen.gtbt/config-service:latest'
-                        sh 'docker push trungnguyen.gtbt/config-service'
+                        sh 'docker push trungnguyengtbt/config-service:latest'
                      }
                 }
 
