@@ -24,8 +24,7 @@ pipeline {
 
                 stage('Run') {
                     steps {
-                        sh 'ls ./target'
-                        sh '/home/jenkins/runner.sh 192.168.1.172 5021 trungnguyengtbt/config-service:latest'
+                        sh 'docker service update --image trungnguyengtbt/config-service:latest config-service'
                     }
                 }
     }
