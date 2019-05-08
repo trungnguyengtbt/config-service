@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
                     steps {
                         sh 'mvn clean package'
-                        sh 'docker build . -t trungnguyengtbt/config-service:latest'
+                        sh 'docker tag config-service:0.0.1-SNAPSHOT trungnguyengtbt/config-service:latest'
                     }
                 }
 
