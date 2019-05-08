@@ -15,6 +15,12 @@ pipeline {
                     }
                 }
 
+                stage('Sonar') {
+                     steps {
+                        sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=285ff322e687759f28921ab9c8001dee7c952a84'
+                     }
+                }
+
                 stage('Publish') {
                      steps {
                         sh 'docker login --username=trungnguyengtbt --password-stdin < /home/jenkins/dockerpassword'
